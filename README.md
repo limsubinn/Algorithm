@@ -1,7 +1,7 @@
 # 파이썬 알고리즘 연습
 
 <이것이 코딩테스트다>
-알고리즘 공부 -> 예제 작성 (Practice) -> 백준 (Baekjoon) 
+알고리즘 공부 -> 예제 (Practice) -> 백준 (Baekjoon) 
 
 1. 그리디 알고리즘
 - https://sssbin.tistory.com/84?category=974360
