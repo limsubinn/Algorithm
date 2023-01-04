@@ -4,7 +4,7 @@ def solution(s):
     answer = []
     
     for i in range(len(s)):
-        temp = s[0:i].rfind(s[i])
+        temp = s[0:i].rfind(s[i]) # 일치하는 마지막 인덱스 찾기 
 
         if (temp == -1):
             answer.append(temp)
