@@ -3,21 +3,25 @@
 import numpy
 
 def solution(N, stages):
+    answer = {}
+    
     arrive = [0 for i in range(N)]
-    clear = [0 for i in range(N)]
-    for i in stages:
-        for j in range(i-1):
-            arrive[j] += 1
-            clear[j] += 1
-        if i <= N:
-            arrive[i-1] += 1
+    stay = [0 for i in range(N)]
+
+    arrive[0] = len(stages)
+    stay[0] = stages.count(1)
+    answer[1] = stay[0] / arrive[0]
     
-    res = {}
-    for i in range(N):
+
+    for i in range(1, N):
+        arrive[i] = arrive[i-1] - stay[i-1]
+        stay[i] = stages.count(i+1)
+
         if arrive[i] == 0:
-            res[i+1] = 0
+            answer[i+1] = 0
         else:
-            res[i+1] = 1 - clear[i] / arrive[i]
-    res = list(dict(sorted(res.items(), key=lambda x:x[1], reverse=1)).keys())
+            answer[i+1] = stay[i] / arrive[i]
+
+    answer = list(dict(sorted(answer.items(), key=lambda x:x[1], reverse=1)).keys())
     
-    return res
+    return answer
