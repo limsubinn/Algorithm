@@ -1,4 +1,4 @@
-# 프로그래머스 42577: 전화버호 목록
+# 프로그래머스 42577: 전화번호 목록
 
 def solution(phone_book):
     phone_book.sort()
